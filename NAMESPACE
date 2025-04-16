@@ -1,0 +1,8 @@
+exportPattern("^[[:alpha:]]+")
+importFrom(magrittr,"%>%")
+importFrom("stats", "setNames")
+importFrom("utils", "read.delim")
+importFrom("parallel", "detectCores")
+importFrom("parallel", "mcmapply")
+importFrom("stringr", "str_length")
+importFrom("methods", "new")
