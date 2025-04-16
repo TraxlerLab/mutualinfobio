@@ -1,7 +1,7 @@
 
 # mutualinfobio
 
-**mutualinfobio** is an R package for computing mutual information (MI) and coevolutionary scores from protein multiple sequence alignments (MSAs), with built-in support for FASTA and plain-text input formats. The package includes visualization tools such as MI heatmaps, and is built using an S4 class structure for managing alignment metadata and derived statistics.
+**mutualinfobio** is an R package for computing mutual information (MI) and coevolutionary scores from protein multiple sequence alignments (MSAs), with built-in support for FASTA and plain-text input formats. The package includes visualization tools such as MI heatmaps.
 
 ---
 
