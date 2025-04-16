@@ -40,7 +40,7 @@ draw_MI_heatmap(
 )
 ```
 
-> ✨ The file `cell3925mmc4.fasta` is included as example data under a [Creative Commons Attribution (CC BY)](https://creativecommons.org/licenses/by/4.0/) license, from the supplementary material of Weigt et al. (2008), *Cell*. DOI: [10.1016/j.cell.2008.04.040](https://doi.org/10.1016/j.cell.2008.04.040)
+> ✨ The file `cell3925mmc4.fasta` is included as example data under a [Creative Commons Attribution (CC BY)](https://creativecommons.org/licenses/by/4.0/) license, from the supplementary material of Wkerker det al. (2008), *Cell*. DOI: [10.1016/j.cell.2008.04.040](https://doi.org/10.1016/j.cell.2008.04.040)
 
 ---
 
@@ -50,15 +50,16 @@ draw_MI_heatmap(
 - Heatmap visualizations of MI scores
 - Support for FASTA and plain text alignments
 - Parallel computation support (with CRAN-safe defaults)
-- S4 object model for advanced usage
 
 ---
 
 ## 📖 Citation
 
-If you use this package in a publication, please cite the authors and acknowledge the source of the example alignment:
+This work was based on the methods described by Skerker et. al:
 
-> Weigt et al. (2008). Identification of direct residue contacts in protein–protein interaction by message passing. *Cell*, 135(4), 732–741. [https://doi.org/10.1016/j.cell.2008.04.040](https://doi.org/10.1016/j.cell.2008.04.040)
+> Skerker, J.M., Perchuk, B.S., Siryaporn, A., Lubin, E.A., Ashenberg, O., Goulian, M., & Laub, M.T. (2008).  
+> Rewiring the specificity of two-component signal transduction systems. *Cell*, 133(6), 1043–1054.  
+> [https://doi.org/10.1016/j.cell.2008.04.040](https://doi.org/10.1016/j.cell.2008.04.040)
 
 ---
 
