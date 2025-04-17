@@ -28,15 +28,16 @@ path <- system.file("extdata", "cell3925mmc4.fasta", package = "mutualinfobio")
 aln <- Alignment(alignment_path = path)
 
 # Compute mutual information-based covariance scores
-mi_scores <- getMICovarianceScore(aln)
+mi_scores <- getMICovarianceScore(aln, cores = 8)
 
+# Visualize as a heatmap
 # Visualize as a heatmap
 draw_MI_heatmap(
   data = mi_scores,
-  alignment_labels = c("GeneA", "GeneB"),
-  alignment_label_locations = c(1, 50),
-  alignment_domain_residues = c(50, 100),
-  heatmap_lines = TRUE
+  alignment_labels = c("HK", "RR"),
+  alignment_label_locations = c(50, 200),
+  alignment_domain_residues = c(100, 308),
+  heatmap_lines = FALSE
 )
 ```
 
@@ -49,7 +50,8 @@ draw_MI_heatmap(
 - Compute MI-based covariation from aligned sequences
 - Heatmap visualizations of MI scores
 - Support for FASTA and plain text alignments
-- Parallel computation support (with CRAN-safe defaults)
+- Parallel computation support in UNIX systems(with CRAN-safe defaults)
+- Cross-Platform (Parallel computation not supported in Windows)
 
 ---
 

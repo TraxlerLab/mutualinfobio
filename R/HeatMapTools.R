@@ -17,7 +17,7 @@ residues_length <- 20
 #' @return A \code{ggplot} object representing the MI heatmap.
 #' @export
 draw_MI_heatmap <- function(data, alignment_labels,alignment_label_locations,alignment_domain_residues,heatmap_lines){
-    mycol <- c("navy", "blue", "cyan", "lightcyan", "yellow", "red", "red4")
+    mycol <- c("navy", "blue", "cyan", "lightgreen", "yellow", "red", "red4")
 
     if(heatmap_lines == TRUE){
       mycol <- c("white", "navy")
