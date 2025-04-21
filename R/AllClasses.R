@@ -32,6 +32,7 @@ setClass("Alignment",
                        counts = "data.frame",
                        frequencies = "vector",
                        totalValid = "vector",
-                       columnStrings = "vector"
+                       columnStrings = "vector",
+                       mi_data = "data.frame"  # load mi data
                      )
                      )
