@@ -186,12 +186,9 @@ getAlignmentLinesFromFile <- function (file_str){
 #' @return A data frame with columns \code{lineID} and \code{sequence}.
 #' @keywords internal
 getAlignmentLinesFromFASTAFile <- function (file_str){
-  #print("executingGetAlignmentLinesFromFasta")
-  #MI_raw_alignment <- read.delim(file_str, header = FALSE, col.names = c("lineID","sequence"), sep="")
   dataframeFASTA <- ReadFasta(file_str)
   colnames(dataframeFASTA)[1] <- "lineID"
   colnames(dataframeFASTA)[2] <- "sequence"
-
   return(dataframeFASTA)
 }
 
