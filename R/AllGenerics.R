@@ -82,3 +82,27 @@ setGeneric("getMICovarianceScore3", function(object, ...) {
 setGeneric("getMICovarianceScoreTriangleMatrix", function(object, ...) {
   standardGeneric("getMICovarianceScoreTriangleMatrix")
 })
+
+#' Get Column Entropies
+#'
+#' Generic function to compute the Shannon entropy of each alignment column.
+#'
+#' @param object An \code{Alignment} object.
+#' @param ... Additional arguments (unused).
+#' @return A numeric vector of entropy values for each column.
+#' @export
+setGeneric("getColumnEntropies", function(object, ...) {
+  standardGeneric("getColumnEntropies")
+})
+
+#' Get Normalized Mutual Information Scores
+#'
+#' Generic function to normalize mutual information scores by column entropies.
+#'
+#' @param object An \code{Alignment} object.
+#' @param ... Additional arguments (unused).
+#' @return A data frame with columns \code{i}, \code{j}, \code{score} (raw MI), and \code{nmi_score} (normalized MI).
+#' @export
+setGeneric("getNormalizedMI", function(object, ...) {
+  standardGeneric("getNormalizedMI")
+})

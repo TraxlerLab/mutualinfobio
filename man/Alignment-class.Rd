@@ -27,5 +27,7 @@ An S4 class to represent a multiple sequence alignment and store associated meta
 \item{\code{totalValid}}{A numeric vector representing the number of valid (non-gap) residues per column.}
 
 \item{\code{columnStrings}}{A character vector where each element is a string of residues from one alignment column.}
+
+\item{\code{mi_data}}{A data frame containing mutual information scores (i, j, score).}
 }}
 
