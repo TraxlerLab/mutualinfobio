@@ -19,7 +19,7 @@ setClassUnion('numericORNULL', members=c('numeric','NULL'))
 #' @slot frequencies A numeric vector of residue frequencies.
 #' @slot totalValid A numeric vector representing the number of valid (non-gap) residues per column.
 #' @slot columnStrings A character vector where each element is a string of residues from one alignment column.
-#'
+#' @slot mi_data A data frame containing mutual information scores (i, j, score).
 #' @docType class
 #' @export
 setClass("Alignment",

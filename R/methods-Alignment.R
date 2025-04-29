@@ -360,7 +360,7 @@ getScoredResidues <- function(object, name) {
 
 #' Read Alignment Column Mask
 #'
-#' Reads a mask file containing a line like '#ColumnsMap\t586, 587, 588, ...'
+#' Reads a mask file containing a line like '#ColumnsMap 586, 587, 588, ...'
 #' and returns the list of column indices.
 #'
 #' @param mask_path Path to the mask file
@@ -383,6 +383,49 @@ readMask <- function(mask_path) {
 
 
 
+
+#' @describeIn getColumnEntropies
+#' Computes the Shannon entropy for each column of the alignment.
+#' @return A numeric vector with entropy values per column.
+#' @export
+setMethod("getColumnEntropies", signature(object = "Alignment"),
+          function(object) {
+            alignment_length <- get_alignment_length(object)
+            entropies <- numeric(alignment_length)
+
+            for (i in seq_len(alignment_length)) {
+              col_string <- getColumnAsString(object, i)
+              probs <- table(strsplit(col_string, "")[[1]]) / nchar(col_string)
+              entropies[i] <- -sum(probs * log2(probs))
+            }
+            return(entropies)
+          })
+
+#' @describeIn getNormalizedMI
+#' Normalizes the MI scores by entropy (NMI).
+#' @return A data frame with columns: i, j, nmi_score
+#' @export
+setMethod("getNormalizedMI", signature(object = "Alignment"),
+          function(object) {
+            stopifnot(!is.null(object@mi_data)) # Make sure MI data is loaded
+
+            entropies <- getColumnEntropies(object)
+
+            normalized_scores <- object@mi_data
+            normalized_scores$nmi_score <- 0.0
+
+            for (row in 1:nrow(normalized_scores)) {
+              i <- normalized_scores$i[row]
+              j <- normalized_scores$j[row]
+              denom <- sqrt(entropies[i] * entropies[j])
+              if (denom > 0) {
+                normalized_scores$nmi_score[row] <- normalized_scores$score[row] / denom
+              } else {
+                normalized_scores$nmi_score[row] <- 0
+              }
+            }
+            return(normalized_scores)
+          })
 
 
 
